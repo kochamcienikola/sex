@@ -6,7 +6,7 @@
     <title>kochamcie</title>
     <style>
         body {
-            background-color: #F7C8D4; /* Pudrowo różowe tło */
+            background-color: #F7C8D4;
             font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
@@ -18,7 +18,7 @@
 
         .countdown {
             font-size: 2rem;
-            color: #F15D93; /* Jasny różowy dla licznika */
+            color: #F15D93;
             text-align: center;
         }
 
@@ -28,7 +28,7 @@
         }
 
         .button-container button {
-            background-color: #FF6B9F; /* Inny odcień różowego dla przycisku */
+            background-color: #FF6B9F;
             color: white;
             border: none;
             padding: 15px 30px;
@@ -39,7 +39,7 @@
         }
 
         .button-container button:hover {
-            background-color: #FF4E85; /* Jaśniejszy różowy na hover */
+            background-color: #FF4E85;
         }
     </style>
 </head>
@@ -51,8 +51,7 @@
     </div>
 
     <script>
-        // Data docelowa - 14 lutego 0:00
-        const targetDate = new Date("2025-01-14T00:00:00");
+        const targetDate = new Date("2025-02-14T00:00:00");
 
         function updateCountdown() {
             const now = new Date();
@@ -71,9 +70,8 @@
             }
         }
 
-        // Aktualizacja licznika co sekundę
         setInterval(updateCountdown, 1000);
-        updateCountdown(); // Uruchomienie na początku
+        updateCountdown();
     </script>
 
 </body>
