@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walentynki</title>
+    <style>
+        body {
+            background-color: #F7C8D4; /* Pudrowo różowe tło */
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        .countdown {
+            font-size: 2rem;
+            color: #F15D93; /* Jasny różowy dla licznika */
+            text-align: center;
+        }
+
+        .button-container {
+            margin-top: 20px;
+            display: none;
+        }
+
+        .button-container button {
+            background-color: #FF6B9F; /* Inny odcień różowego dla przycisku */
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-container button:hover {
+            background-color: #FF4E85; /* Jaśniejszy różowy na hover */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="countdown" class="countdown"></div>
+    <div id="downloadButton" class="button-container">
+        <button onclick="window.location.href = 'https://drive.google.com/uc?export=download&id=1um-qxmNT68asXvPaDCvFcWeF-qEcx_cc';">Pobierz</button>
+    </div>
+
+    <script>
+        // Data docelowa - 14 lutego 0:00
+        const targetDate = new Date("2025-02-14T00:00:00");
+
+        function updateCountdown() {
+            const now = new Date();
+            const timeLeft = targetDate - now;
+
+            if (timeLeft <= 0) {
+                document.getElementById("countdown").style.display = "none";
+                document.getElementById("downloadButton").style.display = "block";
+            } else {
+                const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                document.getElementById("countdown").innerHTML = 
+                    `Pozostało: ${hours}h ${minutes}m ${seconds}s`;
+            }
+        }
+
+        // Aktualizacja licznika co sekundę
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Uruchomienie na początku
+    </script>
+
+</body>
+</html>
